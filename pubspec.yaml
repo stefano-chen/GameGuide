@@ -28,7 +28,7 @@ dependencies:
   flutter_spinkit: "^4.1.1"
   carousel_slider: ^1.4.1
   firebase_auth: ^0.15.4
-  
+  cached_network_image: ^2.0.0
 
 dev_dependencies:
   flutter_test:
