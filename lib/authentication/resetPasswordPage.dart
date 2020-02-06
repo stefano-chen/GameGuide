@@ -16,11 +16,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     if (_email != '') {
       dynamic result = await _auth.resetPassword(_email);
       if (result is int) {
-          _error = (result == 83) ? 'Email is not valid' : 'email is not found';
+        _error = (result == 83) ? 'Email is not valid' : 'email is not found';
       } else {
         Navigator.pop(context);
       }
-    }else{
+    } else {
       _error = 'Email can\'t be Empty';
     }
     setState(() {});
@@ -102,15 +102,15 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     Container(
                       height: 40.0,
                       width: 220.0,
-                      child: Material(
-                        borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: Colors.greenAccent,
-                        color: Colors.green,
-                        elevation: 7.0,
-                        child: GestureDetector(
-                          onTap: () async {
-                            await _reset();
-                          },
+                      child: GestureDetector(
+                        onTap: () async {
+                          await _reset();
+                        },
+                        child: Material(
+                          borderRadius: BorderRadius.circular(20.0),
+                          shadowColor: Colors.greenAccent,
+                          color: Colors.green,
+                          elevation: 7.0,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 12.0, horizontal: 89.0),

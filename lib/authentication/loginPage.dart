@@ -107,10 +107,13 @@ class _LoginPageState extends State<LoginPage> {
                         padding: EdgeInsets.only(top: 15.0, left: 20.0),
                         child: InkWell(
                             child: GestureDetector(
-                              onTap: (){
-                                FocusScope.of(context).unfocus();
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => ResetPasswordPage()));
-                              },
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ResetPasswordPage()));
+                          },
                           child: Text(
                             'Forgot Password',
                             style: TextStyle(
@@ -125,20 +128,20 @@ class _LoginPageState extends State<LoginPage> {
                     Container(
                       height: 40.0,
                       width: 220.0,
-                      child: Material(
-                        borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: Colors.greenAccent,
-                        color: Colors.green,
-                        elevation: 7.0,
-                        child: GestureDetector(
-                          onTap: () async {
-                            dynamic result = await _auth
-                                .loginWithEmailAndPassword(_email, _password);
-                            if (result is String) {
-                              setState(() => _error = result);
-                              FocusScope.of(context).unfocus();
-                            }
-                          },
+                      child: GestureDetector(
+                        onTap: () async {
+                          dynamic result = await _auth
+                              .loginWithEmailAndPassword(_email, _password);
+                          if (result is String) {
+                            setState(() => _error = result);
+                            FocusScope.of(context).unfocus();
+                          }
+                        },
+                        child: Material(
+                          borderRadius: BorderRadius.circular(20.0),
+                          shadowColor: Colors.greenAccent,
+                          color: Colors.green,
+                          elevation: 7.0,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 12.0, horizontal: 86.0),
@@ -155,9 +158,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     SizedBox(height: 40.0),
                     Container(
-                        child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 65.0),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
                             'New to GameGuide?',
@@ -186,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ],
                       ),
-                    ))
+                    )
                   ],
                 ),
               ),

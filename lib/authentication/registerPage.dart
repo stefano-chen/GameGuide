@@ -29,10 +29,10 @@ class _RegisterPageState extends State<RegisterPage> {
             _error = 'Email is already in use';
             break;
         }
-      }else{
+      } else {
         Navigator.pop(context);
       }
-    }else{
+    } else {
       _error = 'Email or Password can\'t be empty';
     }
     setState(() {});
@@ -85,9 +85,17 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
+                padding: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
                 child: Column(
                   children: [
+                    Text(
+                      _error,
+                      style: TextStyle(
+                        color: Colors.redAccent,
+                        fontFamily: 'Montserrat',
+                      ),
+                    ),
+                    SizedBox(height: 5.0),
                     TextField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
@@ -117,27 +125,19 @@ class _RegisterPageState extends State<RegisterPage> {
                         _password = val;
                       },
                     ),
-                    SizedBox(height: 5),
-                    Text(
-                      _error,
-                      style: TextStyle(
-                        color: Colors.redAccent,
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    SizedBox(height: 57.0),
+                    SizedBox(height: 73.0),
                     Container(
                       height: 40.0,
                       width: 220.0,
-                      child: Material(
-                        borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: Colors.greenAccent,
-                        color: Colors.green,
-                        elevation: 7.0,
-                        child: GestureDetector(
-                          onTap: () async {
-                            await _registration();
-                          },
+                      child: GestureDetector(
+                        onTap: () async {
+                          await _registration();
+                        },
+                        child: Material(
+                          borderRadius: BorderRadius.circular(20.0),
+                          shadowColor: Colors.greenAccent,
+                          color: Colors.green,
+                          elevation: 7.0,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 12.0, horizontal: 79.0),
@@ -154,9 +154,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     SizedBox(height: 40.0),
                     Container(
-                        child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 60.0),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
                             'Already have an account?',
@@ -182,7 +181,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                         ],
                       ),
-                    ))
+                    )
                   ],
                 ),
               ),
