@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "8931950876",
+    "firebase_url": "https://gameguide-9cf3b.firebaseio.com",
+    "project_id": "gameguide-9cf3b",
+    "storage_bucket": "gameguide-9cf3b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8931950876:android:acd4121c4ca58baf16fad9",
+        "android_client_info": {
+          "package_name": "com.chenstefano.gameguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8931950876-m7lncbhlbn067t637abpr7c30jlja74v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHdu73drE5f9mpMDM2j5DYDIKHU17T2a4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8931950876-m7lncbhlbn067t637abpr7c30jlja74v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
