@@ -1,4 +1,4 @@
-# gameguide
+# GameGuide
 
 A new Flutter project.
 
