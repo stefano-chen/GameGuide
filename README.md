@@ -12,5 +12,5 @@ There are 4 main feature:
  - Search a Champion
  - Save the Favorites Champions
 
-### [Documentation](https://drive.google.com/open?id=19XGCjL9gn9TIW6Ho03mz2Mwa7G5Tqg2Y)
+### [Documentation](https://drive.google.com/file/d/1DO7iDGa69gJ9MZWqjLifwnfQGXBbCFFL/view?usp=sharing)
 
