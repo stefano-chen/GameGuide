@@ -1,16 +1,16 @@
-# GameGuide
+Chen Stefano 5CIA 08/02/2020
 
-A new Flutter project.
+# GameGuide Documentation
 
-## Getting Started
+GameGuide is an application developed in [Flutter](https://flutter.dev/) with the aim of providing information about [League of Legends](https://play.euw.leagueoflegends.com/en_GB).
 
-This project is a starting point for a Flutter application.
+The application allow the use to create an account.
 
-A few resources to get you started if this is your first Flutter project:
+There are 4 main feature:
+ - Login/Register
+ - Champion Info
+ - Search a Champion
+ - Save the Favorites Champions
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### [Documentation](https://drive.google.com/file/d/1DO7iDGa69gJ9MZWqjLifwnfQGXBbCFFL/view?usp=sharing)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
