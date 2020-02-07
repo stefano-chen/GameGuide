@@ -6,17 +6,10 @@ class ChampionTile extends StatelessWidget {
   final String imageFull;
   final String name;
   final String title;
+  final String id;
 
 
-  /*
-  Image.network(
-              'http://ddragon.leagueoflegends.com/cdn/10.2.1/img/champion/$imageFull',
-              width: 40.0,
-              height: 40.0,
-            )
-            */
-
-  ChampionTile({this.imageFull, this.name, this.title});
+  ChampionTile({this.imageFull, this.name, this.title,this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +22,7 @@ class ChampionTile extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: "http://ddragon.leagueoflegends.com/cdn/10.2.1/img/champion/$imageFull",
               placeholder: (context,url) => CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation(Colors.blue),
+                valueColor: AlwaysStoppedAnimation(Colors.black),
               ),
             )),
         onTap: () {
@@ -37,7 +30,7 @@ class ChampionTile extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) => ChampionPage(
-                        name: name,
+                        id: id,
                       )));
         },
       ),

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:gameguide/services/saveManager.dart';
 
 class AuthService{
 
@@ -6,6 +7,10 @@ class AuthService{
 
   Stream<FirebaseUser> get user{
     return _auth.onAuthStateChanged;
+  }
+
+  Future<FirebaseUser> getUser() async{
+    return _auth.currentUser();
   }
 
   Future resetPassword(String email) async{
@@ -19,8 +24,9 @@ class AuthService{
   Future loginWithEmailAndPassword(String email,String password) async{
     try{
       AuthResult result = await _auth.signInWithEmailAndPassword(email: email, password: password);
-      if(result.user.isEmailVerified)
-          return result.user;
+      if(result.user.isEmailVerified){
+        return result.user;
+      }
       else{
         await _auth.signOut();
         return 'Email is not Verified';
@@ -45,6 +51,7 @@ class AuthService{
     try{
       FirebaseUser user = await _auth.currentUser();
       user.delete();
+      await SaveManager.removeAllFavorites();
     }catch(e){
       return null;
     }

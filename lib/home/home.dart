@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gameguide/home/pages/champions.dart';
+import 'package:gameguide/home/pages/favoritePage.dart';
+import 'package:gameguide/services/authService.dart';
+import 'package:gameguide/services/saveManager.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -7,24 +10,34 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+
   int _currentIndex = 0;
+  AuthService auth = AuthService();
 
   PageController _pageController = PageController();
+
+  Future getUser() async{
+    SaveManager.user = await auth.getUser();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getUser();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF141515),
         title: Text(
           "GameGuide",
-          style: TextStyle(color: Colors.white),
         ),
         actions: <Widget>[
           IconButton(
               icon: Icon(
                 Icons.settings,
-                color: Colors.white,
               ),
               onPressed: () {
                 Navigator.pushNamed(context, 'settings');
@@ -40,15 +53,15 @@ class _HomeState extends State<Home> {
         },
         children: <Widget>[
           Champions(),
+          FavoritePage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(title: Text('Home'),icon: Icon(Icons.home)),
-          BottomNavigationBarItem(title: Text('Search'),icon: Icon(Icons.search)),
+          //BottomNavigationBarItem(title: Text('Search'),icon: Icon(Icons.search)),
           BottomNavigationBarItem(title: Text('Favorites'),icon: Icon(Icons.favorite))
         ],
-        backgroundColor: Color(0xFF141515),
         currentIndex: _currentIndex,
         onTap: (index){
           setState(() {
@@ -56,7 +69,7 @@ class _HomeState extends State<Home> {
             _pageController.jumpToPage(index);
           });
         },
-        selectedItemColor: Colors.white,
+        selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
         iconSize: 25.0,
       ),
