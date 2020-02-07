@@ -9,10 +9,6 @@ class AuthService{
     return _auth.onAuthStateChanged;
   }
 
-  Future<FirebaseUser> getUser() async{
-    return _auth.currentUser();
-  }
-
   Future resetPassword(String email) async{
     try{
       await _auth.sendPasswordResetEmail(email: email);

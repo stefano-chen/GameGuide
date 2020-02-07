@@ -17,14 +17,9 @@ class _HomeState extends State<Home> {
 
   PageController _pageController = PageController();
 
-  Future getUser() async{
-    SaveManager.user = await auth.getUser();
-  }
-
   @override
   void initState() {
     super.initState();
-    getUser();
   }
 
   @override

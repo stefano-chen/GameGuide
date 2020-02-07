@@ -1,57 +1,20 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gameguide/services/authService.dart';
 import 'package:gameguide/services/ThemeChanger.dart';
 import 'package:gameguide/services/saveManager.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SettingsPage extends StatefulWidget {
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
 
-/*
-
- Center(
-        child:Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 62.0),
-          child: Column(
-            children: <Widget>[
-              FlatButton(
-                color: Colors.green,
-                onPressed: () async{
-                await _auth.signOut();
-                Navigator.pop(context);
-              }, child: Text('Log Out')),
-              SizedBox(width: 20.0),
-              FlatButton(
-                color: Colors.red,
-                onPressed: () async{
-                await _auth.deleteAccount();
-                await SaveManager.removeAllFavorites();
-                Navigator.pop(context);
-              }, child: Text('Delete Account')),
-              FlatButton(
-                onPressed: (){
-                  if(_theme.getBool()){
-                    _theme.setTheme(ThemeData(primaryColor: Colors.white));
-                    SaveManager.writeTheme(false);
-                  }else
-                    _theme.setTheme(ThemeData.dark());
-                    SaveManager.writeTheme(true);
-                },
-                child: Text('Change Theme'),
-              )
-            ],
-          ),
-        ),
-      ),
-
-*/
 class _SettingsPageState extends State<SettingsPage> {
   AuthService _auth = AuthService();
   String url ="https://github.com/stefano-chen/GameGuide";
+  String urlEmail = 'mailto:stefanochen01@gmail.com'; 
 
   void _showDialog(
       BuildContext context, String title, String message, Function f) {
@@ -106,7 +69,19 @@ class _SettingsPageState extends State<SettingsPage> {
         children: <Widget>[
           ListTile(
             leading: Icon(Icons.email),
-            title: Text(SaveManager.user.email),
+            title: Text('stefanochen01@gmail.com'),
+            onTap: ()async{
+              if(await canLaunch(urlEmail)){
+                launch(urlEmail);
+              }else{
+                Fluttertoast.showToast(
+                  msg: 'Could not open the link',
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  fontSize: 20.0,
+                );
+              }
+            },
           ),
           ListTile(
             leading: Icon(Icons.brightness_4),
@@ -127,8 +102,14 @@ class _SettingsPageState extends State<SettingsPage> {
             onTap: ()async{
               if(await canLaunch(url)){
                 launch(url);
+              }else{
+                Fluttertoast.showToast(
+                  msg: 'Could not open the link',
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  fontSize: 20.0,
+                );
               }
-              
             },
           ),
           ListTile(
