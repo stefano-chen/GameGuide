@@ -12,7 +12,7 @@ class Champion{
   String imageSprite = '';
   List<int> skins = List<int>();
   String description = '';
-  List<String> type = List<String>(); //TODO
+  List<String> type = List<String>();
   Stats stats = Stats();
   List<Spell> spells = List<Spell>();
   Passive passive = Passive();

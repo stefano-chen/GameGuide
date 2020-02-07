@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gameguide/home/pages/champions.dart';
 import 'package:gameguide/home/pages/favoritePage.dart';
 import 'package:gameguide/services/authService.dart';
-import 'package:gameguide/services/saveManager.dart';
 
 class Home extends StatefulWidget {
   @override

@@ -2,7 +2,6 @@ import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:gameguide/services/authService.dart';
 import 'package:gameguide/services/saveManager.dart';
 import 'package:gameguide/widgets/championTile.dart';
 import 'package:http/http.dart' as http;
