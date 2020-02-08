@@ -6,10 +6,9 @@ GameGuide is an application developed in [Flutter](https://flutter.dev/) with th
 
 The application allow the use to create an account.
 
-There are 4 main feature:
+There are 3 main feature:
  - Login/Register
  - Champion Info
- - Search a Champion
  - Save the Favorites Champions
 
 ### [Documentation](https://drive.google.com/open?id=1sZE5kiBTNOzXSr0s7PZ1y9zfYdb7Kpp6)
