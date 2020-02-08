@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gameguide/home/pages/champions.dart';
 import 'package:gameguide/home/pages/favoritePage.dart';
 import 'package:gameguide/services/authService.dart';
+import 'package:gameguide/services/saveManager.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -63,7 +64,8 @@ class _HomeState extends State<Home> {
             _pageController.jumpToPage(index);
           });
         },
-        selectedItemColor: Colors.black,
+        backgroundColor: (SaveManager.readTheme()) ? Color(0xFF212121) : Colors.white,
+        selectedItemColor: (SaveManager.readTheme()) ? Colors.white : Colors.black, 
         unselectedItemColor: Colors.grey,
         iconSize: 25.0,
       ),

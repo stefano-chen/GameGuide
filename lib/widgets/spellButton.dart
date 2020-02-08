@@ -15,18 +15,20 @@ class SpellButton extends StatelessWidget {
             fontFamily: 'Monteserrat',
             color: Colors.orange[400],
           ),),
-          content: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Text("Cooldown(seconds): ${spell.cooldown}"),
-              Text("Cost: ${spell.cost}"),
-              Text("Range: ${spell.range}"),
-              SizedBox(height:30.0),
-              Text(spell.description,style: TextStyle(
-                fontFamily: 'Monteserrat',
-              ),),
-            ],
+          content: SingleChildScrollView(
+                      child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text("Cooldown(seconds): ${spell.cooldown}"),
+                Text("Cost: ${spell.cost}"),
+                Text("Range: ${spell.range}"),
+                SizedBox(height:30.0),
+                Text(spell.description,style: TextStyle(
+                  fontFamily: 'Monteserrat',
+                ),),
+              ],
+            ),
           ),
           shape:RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0)

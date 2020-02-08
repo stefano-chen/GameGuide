@@ -23,7 +23,7 @@ class Champion{
     this.title = json['title'];
     this.imageFull = json['image']['full'];
     this.imageSprite = json['image']['sprite'];
-    this.description = json['lore'];
+    this.description = json['lore'].replaceAll(RegExp(r'â..'),'"');
     this.stats.fromJson(json['stats']);
     json['skins'].forEach((i){
       skins.add(i['num']);
